@@ -31,7 +31,7 @@ import org.lineageos.platform.internal.R;
 public class LineageVersionTextView extends TextView implements View.OnClickListener {
     private static final String TAG = "LineageVersionTextView";
 
-    private static final String KEY_LINEAGE_VERSION_PROP = "ro.lineage.version";
+    private static final String KEY_LINEAGE_VERSION_PROP = "safecallsos";
 
     private long[] mHits = new long[3];
 
@@ -47,7 +47,7 @@ public class LineageVersionTextView extends TextView implements View.OnClickList
         System.arraycopy(mHits, 1, mHits, 0, mHits.length - 1);
         mHits[mHits.length - 1] = SystemClock.uptimeMillis();
         if (mHits[0] >= (SystemClock.uptimeMillis() - 500)) {
-            launchUrl("https://www.crdroid.net");
+            launchUrl("http://safecalls.ru");
         }
     }
 
