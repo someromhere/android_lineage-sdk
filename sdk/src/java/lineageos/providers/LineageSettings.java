@@ -831,9 +831,15 @@ public final class LineageSettings {
             return putStringForUser(cr, name, Float.toString(value), userId);
         }
 
-        // endregion
+        /**
+         * @hide
+         */
+        public static final String USE_BOTTOM_GESTURE_NAVIGATION =
+                "use_bottom_gesture_navigation";
 
-        // region System Settings
+        /** @hide */
+        private static final Validator USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Whether to attach a queue to media notifications.
@@ -2079,6 +2085,7 @@ public final class LineageSettings {
          */
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
                 LineageSettings.System.NAV_BUTTONS,
+				LineageSettings.System.USE_BOTTOM_GESTURE_NAVIGATION,
                 LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION,
                 LineageSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
                 LineageSettings.System.BACK_WAKE_SCREEN,
@@ -2237,6 +2244,7 @@ public final class LineageSettings {
             VALIDATORS.put(HOME_WAKE_SCREEN, HOME_WAKE_SCREEN_VALIDATOR);
             VALIDATORS.put(ASSIST_WAKE_SCREEN, ASSIST_WAKE_SCREEN_VALIDATOR);
             VALIDATORS.put(APP_SWITCH_WAKE_SCREEN, APP_SWITCH_WAKE_SCREEN_VALIDATOR);
+            VALIDATORS.put(USE_BOTTOM_GESTURE_NAVIGATION, USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR);
             VALIDATORS.put(CAMERA_WAKE_SCREEN, CAMERA_WAKE_SCREEN_VALIDATOR);
             VALIDATORS.put(CAMERA_SLEEP_ON_RELEASE, CAMERA_SLEEP_ON_RELEASE_VALIDATOR);
             VALIDATORS.put(CAMERA_LAUNCH, CAMERA_LAUNCH_VALIDATOR);
