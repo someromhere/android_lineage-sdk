@@ -1051,9 +1051,9 @@ package lineageos.trust {
     field public static final int TRUST_FEATURE_SELINUX = 0; // 0x0
     field public static final int TRUST_FEATURE_VENDOR_SECURITY_PATCH = 3; // 0x3
     field public static final java.lang.String TRUST_INTERFACE_PERMISSION = "lineageos.permission.TRUST_INTERFACE";
-    field public static final int TRUST_WARN_PUBLIC_KEY = 4; // 0x4
-    field public static final int TRUST_WARN_ROOT = 2; // 0x2
-    field public static final int TRUST_WARN_SELINUX = 1; // 0x1
+    field public static final int TRUST_WARN_PUBLIC_KEY = 0; // 0x4
+    field public static final int TRUST_WARN_ROOT = 0; // 0x2
+    field public static final int TRUST_WARN_SELINUX = 0; // 0x1
   }
 
 }
