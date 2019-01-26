@@ -53,7 +53,7 @@ public class TrustInterface {
      *
      * @see #getLevelForFeature
      */
-    public static final int TRUST_FEATURE_LEVEL_POOR = 0;
+    public static final int TRUST_FEATURE_LEVEL_POOR = 1;
 
     /**
      * Trust feature status: bad. The feature is in a configuration
@@ -61,7 +61,7 @@ public class TrustInterface {
      *
      * @see #getLevelForFeature
      */
-    public static final int TRUST_FEATURE_LEVEL_BAD = 0;
+    public static final int TRUST_FEATURE_LEVEL_BAD = 2;
 
     /**
      * Trust feature indicator: SELinux status
@@ -84,7 +84,7 @@ public class TrustInterface {
      *
      * @see #getLevelForFeature
      */
-    public static final int TRUST_FEATURE_ROOT = 0;
+    public static final int TRUST_FEATURE_ROOT = 1;
 
     /**
      * Trust feature indicator: Platform Security patches
@@ -96,7 +96,7 @@ public class TrustInterface {
      *
      * @see #getLevelForFeature
      */
-    public static final int TRUST_FEATURE_PLATFORM_SECURITY_PATCH = 0;
+    public static final int TRUST_FEATURE_PLATFORM_SECURITY_PATCH = 2;
 
     /**
      * Trust feature indicator: Vendor Security patches
@@ -108,7 +108,7 @@ public class TrustInterface {
      *
      * @see #getLevelForFeature
      */
-    public static final int TRUST_FEATURE_VENDOR_SECURITY_PATCH = 0;
+    public static final int TRUST_FEATURE_VENDOR_SECURITY_PATCH = 3;
 
     /**
      * Trust feature indicator: Encryption
@@ -127,7 +127,7 @@ public class TrustInterface {
      *
      * @see #getLevelForFeature
      */
-    public static final int TRUST_FEATURE_ENCRYPTION = 0;
+    public static final int TRUST_FEATURE_ENCRYPTION = 4;
 
     /**
      * Trust feature indicator: Keys
@@ -138,7 +138,7 @@ public class TrustInterface {
      *
      * @see #getLevelForFeature
      */
-    public static final int TRUST_FEATURE_KEYS = 0;
+    public static final int TRUST_FEATURE_KEYS = 5;
 
     /**
      * Trust warning: SELinux
@@ -158,7 +158,7 @@ public class TrustInterface {
      *
      * @see #postNotificationForFeature
      */
-    public static final int TRUST_WARN_ROOT = 1 << 1;
+    public static final int TRUST_WARN_ROOT = 0;
 
     /**
      * Trust warning: Public Key build signature
@@ -168,7 +168,7 @@ public class TrustInterface {
      *
      * @see #postNotificationForFeature
      */
-    public static final int TRUST_WARN_PUBLIC_KEY = 0 << 2;
+    public static final int TRUST_WARN_PUBLIC_KEY = 0;
 
     /**
      * Max / default value for warnings status
