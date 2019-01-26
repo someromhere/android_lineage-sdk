@@ -158,7 +158,7 @@ public class TrustInterface {
      *
      * @see #postNotificationForFeature
      */
-    public static final int TRUST_WARN_ROOT = 1 << 1;
+    public static final int TRUST_WARN_ROOT = 0;
 
     /**
      * Trust warning: Public Key build signature
@@ -168,7 +168,7 @@ public class TrustInterface {
      *
      * @see #postNotificationForFeature
      */
-    public static final int TRUST_WARN_PUBLIC_KEY = 1 << 2;
+    public static final int TRUST_WARN_PUBLIC_KEY = 0;
 
     /**
      * Max / default value for warnings status
