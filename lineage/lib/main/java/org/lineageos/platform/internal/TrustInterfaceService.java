@@ -312,6 +312,11 @@ public class TrustInterfaceService extends LineageSystemService {
                 return TrustInterface.ERROR_UNDEFINED;
         }
     }
+    
+        private boolean hasOnboardedUser() {
+        return LineageSettings.System.getInt(mContext.getContentResolver(),
+                LineageSettings.System.TRUST_INTERFACE_HINTED, 1) == 1;
+    }
 
     /* Service */
 
