@@ -77,7 +77,7 @@ public class StyleInterface {
      * @see #setDarkOverlay
      * @hide
      */
-    public static final String OVERLAY_DARK_DEFAULT = "org.lineageos.overlay.dark";
+    public static final String OVERLAY_DARK_DEFAULT = "org.lineageos.overlay.black";
 
     /**
      * Dark style: black
