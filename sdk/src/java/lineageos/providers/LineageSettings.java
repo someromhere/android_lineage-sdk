@@ -19,6 +19,7 @@ package lineageos.providers;
 
 import com.android.internal.util.ArrayUtils;
 
+import android.annotation.Nullable;
 import android.content.ContentResolver;
 import android.content.IContentProvider;
 import android.database.Cursor;
@@ -318,6 +319,18 @@ public final class LineageSettings {
         public boolean validate(String value) {
             try {
                 return Integer.parseInt(value) >= 0;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
+    };
+
+    private static final Validator sAnyIntegerValidator = new Validator() {
+        @Override
+        public boolean validate(@Nullable String value) {
+            try {
+                Integer.parseInt(value);
+                return true;
             } catch (NumberFormatException e) {
                 return false;
             }
@@ -840,6 +853,24 @@ public final class LineageSettings {
         /** @hide */
         private static final Validator USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR =
                 sBooleanValidator;
+
+        /**
+         * @hide
+         */
+        public static final String BOTTOM_GESTURE_NAVIGATION_TRIGGER_TIMEOUT =
+                "bottom_gesture_navigation_trigger_timeout";
+
+        private static final Validator BOTTOM_GESTURE_NAVIGATION_TRIGGER_TIMEOUT_VALIDATOR =
+                sAnyIntegerValidator;
+
+        /**
+         * @hide
+         */
+        public static final String BOTTOM_GESTURE_NAVIGATION_SWIPE_LIMIT =
+                "bottom_gesture_navigation_swipe_limit";
+
+        private static final Validator BOTTOM_GESTURE_NAVIGATION_SWIPE_LIMIT_VALIDATOR =
+                sAnyIntegerValidator;
 
         /**
          * Whether to attach a queue to media notifications.
@@ -2086,6 +2117,8 @@ public final class LineageSettings {
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
                 LineageSettings.System.NAV_BUTTONS,
 				LineageSettings.System.USE_BOTTOM_GESTURE_NAVIGATION,
+                LineageSettings.System.BOTTOM_GESTURE_NAVIGATION_TRIGGER_TIMEOUT,
+                LineageSettings.System.BOTTOM_GESTURE_NAVIGATION_SWIPE_LIMIT,
                 LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION,
                 LineageSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
                 LineageSettings.System.BACK_WAKE_SCREEN,
@@ -2245,6 +2278,8 @@ public final class LineageSettings {
             VALIDATORS.put(ASSIST_WAKE_SCREEN, ASSIST_WAKE_SCREEN_VALIDATOR);
             VALIDATORS.put(APP_SWITCH_WAKE_SCREEN, APP_SWITCH_WAKE_SCREEN_VALIDATOR);
             VALIDATORS.put(USE_BOTTOM_GESTURE_NAVIGATION, USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR);
+            VALIDATORS.put(BOTTOM_GESTURE_NAVIGATION_TRIGGER_TIMEOUT, BOTTOM_GESTURE_NAVIGATION_TRIGGER_TIMEOUT_VALIDATOR);
+            VALIDATORS.put(BOTTOM_GESTURE_NAVIGATION_SWIPE_LIMIT, BOTTOM_GESTURE_NAVIGATION_SWIPE_LIMIT_VALIDATOR);
             VALIDATORS.put(CAMERA_WAKE_SCREEN, CAMERA_WAKE_SCREEN_VALIDATOR);
             VALIDATORS.put(CAMERA_SLEEP_ON_RELEASE, CAMERA_SLEEP_ON_RELEASE_VALIDATOR);
             VALIDATORS.put(CAMERA_LAUNCH, CAMERA_LAUNCH_VALIDATOR);
